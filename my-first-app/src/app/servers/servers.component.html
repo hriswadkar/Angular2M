@@ -37,4 +37,5 @@
 <div 
     *ngFor="let item of displayCount"
     [ngStyle]="{backgroundColor: item >= 5 ? '#224455' : 'transparent'}"
+    [ngClass]="{'white-text': item >= 5}"
 >{{item}}</div>
