@@ -27,5 +27,14 @@
 <button class="btn btn-primary" 
     [disabled]="userName.length == 0" 
     (click)="onClearUserName()">Clear User Name</button>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+
+<button class="btn btn-primary"
+    (click)="onDisplayDetails()">Display Details
+</button>
+<p *ngIf="displayStatus">Secret details: tuna</p>
+<p>Total Button Clicks {{displayCount.length}}</p>
+<div 
+    *ngFor="let item of displayCount"
+    [ngStyle]="{backgroundColor: item >= 5 ? '#224455' : 'transparent'}"
+>{{item}}</div>
